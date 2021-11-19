@@ -129,7 +129,7 @@ var container1 = d3.select("#charts")
           .attr('font-size','11px')
           .attr('font-weight','bold')
           .text('Lap')
-      );;
+      );
 
     // Add the Y Axis
     container1.append("g")
