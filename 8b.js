@@ -118,12 +118,37 @@ var container1 = d3.select("#charts")
     container1.append("g")
       .attr("class", "axis")
       .attr("transform", "translate(0," + height + ")")
-      .call(d3.axisBottom(x1));
+      .call(d3.axisBottom(x1))
+      .call((g) =>
+        g
+          .append("text")
+          .attr("x", width)
+          .attr("y", margin.bottom-2)
+          .attr("fill", "black")
+          .attr("text-anchor", "end")
+          .attr('font-size','11px')
+          .attr('font-weight','bold')
+          .text('Lap')
+      );;
 
     // Add the Y Axis
     container1.append("g")
       .attr("class", "axis")
-      .call(d3.axisLeft(y1));
+      .call(d3.axisLeft(y1))
+      .call((g) =>
+        g
+          .append("text")
+          .attr("x", -margin.left)
+          .attr("y", 10)
+          .attr("fill", "black")
+          .attr("text-anchor", "start")
+          .text('Milliseconds/1000')
+          .attr('font-size','11px')
+          .attr('font-weight','bold')
+          .attr('transform','rotate(-90)')
+          .attr('y',-35)
+          .attr('x',-160)
+      )
 
 
 
@@ -196,7 +221,7 @@ height = 270 - margin.top - margin.bottom;
         g
           .append("text")
           .attr("x", width)
-          .attr("y", margin.bottom - 4)
+          .attr("y", margin.bottom+5)
           .attr("fill", "black")
           .attr("text-anchor", "end")
           .attr('font-size','11px')
@@ -222,8 +247,8 @@ height = 270 - margin.top - margin.bottom;
           .attr('font-size','11px')
           .attr('font-weight','bold')
           .attr('transform','rotate(-90)')
-          .attr('y',-30)
-          .attr('x',-120)
+          .attr('y',-35)
+          .attr('x',-160)
       );
 
 
